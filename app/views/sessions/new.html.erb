@@ -1,0 +1,10 @@
+<h1>Login</h1>
+<div>
+  <div>
+    <%= form_for(:session) do |f| %>
+        <p><%= f.text_field :username, placeholder: "susanyi" %></p>
+        <p><%= f.password_field :password, placeholder: "password" %></p>
+      <%= f.submit "Log In"%>
+    <% end %>
+  </div>
+</div>
