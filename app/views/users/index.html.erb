@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Has Mailed</th>
+        <th>Generate PDF</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.address %></td>
+        <td><%= user.has_mailed %></td>
+        <td>Button</td>
+    </tr>
+</table>
