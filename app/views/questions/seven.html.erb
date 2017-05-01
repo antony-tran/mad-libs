@@ -1,0 +1,31 @@
+<script type="text/javascript">
+    function storeData() {
+        if (sessionStorage) {
+            const a_one = $("input").val().trim()
+            sessionStorage.setItem('q_one', a_one)
+        }
+    }
+</script>
+
+<div class="questions-container">
+    <div class="question-card-container">
+        <div>What's your name?</div>
+        <form class="question-form" action="/complete">
+            <button class="back-button">
+                <svg style="transform:rotate(180deg);" xmlns="http://www.w3.org/2000/svg" width="36" height="65" viewBox="0 0 36 65">
+                    <path fill="#C00" d="M3.9 65.2L0 61.3l28.7-28.7L0 3.9 3.9 0l32.6 32.6"/>
+                </svg>
+            </button>
+            <div class="btn-padding"></div>
+            <input type="text" class="questions-input" placeholder="e.g. That cookie you kind of like" autofocus />
+            <div class="btn-padding"></div>
+            <button class="next-button" onclick="storeData()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="65" viewBox="0 0 36 65">
+                    <path fill="#C00" d="M3.9 65.2L0 61.3l28.7-28.7L0 3.9 3.9 0l32.6 32.6"/>
+                </svg>
+            </button>
+        </form>
+
+        <div class="question-number"> 7 / 7 </div>
+     </div>
+</div>

@@ -1,0 +1,25 @@
+<script type="text/javascript">
+    function storeData() {
+        if (sessionStorage) {
+            const a_one = $("input").val().trim()
+            sessionStorage.setItem('q_one', a_one)
+        }
+    }
+</script>
+
+<div class="questions-container">
+    <div class="question-card-container">
+        <div>What's your honey's name?</div>
+        <form class="question-form" action="/two">
+            <div class="btn-padding-left"></div>
+            <input type="text" class="questions-input" placeholder="e.g. Hottest cookie in the world" autofocus />
+            <div class="btn-padding"></div>
+            <button class="next-button" onclick="storeData()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="65" viewBox="0 0 36 65">
+                    <path fill="#C00" d="M3.9 65.2L0 61.3l28.7-28.7L0 3.9 3.9 0l32.6 32.6"/>
+                </svg>
+            </button>
+        </form>
+        <div class="question-number"> 1 / 7 </div>
+     </div>
+</div>

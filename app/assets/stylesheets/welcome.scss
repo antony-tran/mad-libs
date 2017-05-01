@@ -1,0 +1,50 @@
+.main-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    font-size: 40px;
+}
+
+.handwritten {
+    font-family: "Shadows Into Light";
+    text-decoration: underline;
+    color: #CC0000;
+    text-decoration-color: #000000;
+}
+
+.card {
+    border: 3px solid #000000;
+    border-radius: 9px;
+    box-sizing: border-box;
+    width: 800px;
+    padding: 30px 120px 30px 120px;
+}
+
+.intro {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.welcome-page {
+    padding-bottom: 40px;
+}
+
+.footer-button-form {
+    position: relative;
+    height: 43px;
+    width: 386px;
+    left: calc(50% - 193px);
+    border: 1px solid #0D1E54;
+    background-color: #CC0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: -26px;
+    z-index: 1;
+}
+
+.footer-button {
+    background-color: #CC0000;
+    width: 386px;
+}

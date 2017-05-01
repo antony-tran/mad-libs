@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+    font-family: Futura;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+}
