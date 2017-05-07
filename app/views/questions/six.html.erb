@@ -5,6 +5,13 @@
             sessionStorage.setItem('q_six', a_six)
         }
     }
+
+    function stopEnterkey(evt) {
+        if (evt.keyCode === 13) {
+            return false
+        }
+    }
+    document.onkeypress = stopEnterkey
 </script>
 
 <div class="questions-container">
@@ -17,7 +24,7 @@
                 </svg>
             </button>
             <div class="btn-padding"></div>
-            <input type="text" class="questions-input" placeholder="e.g. do it like they do on the discovery channel" autofocus />
+            <input type="text" class="questions-input" placeholder="e.g. do it like they do on the discovery channel" autofocus maxlength="50" />
             <div class="btn-padding"></div>
             <button class="next-button" onclick="storeData()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="36" height="65" viewBox="0 0 36 65">

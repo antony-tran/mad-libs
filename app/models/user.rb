@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    validates :email, :address, presence: true, on: :create
-    validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
+    has_attached_file :photo
 
-    has_one :form
+    validates_attachment :photo, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
+
 end
