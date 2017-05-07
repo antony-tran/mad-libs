@@ -22,15 +22,10 @@ ActiveRecord::Schema.define(version: 20170507035301) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "forms", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
-    t.string   "name"
+    t.string   "recipient_name"
     t.string   "email"
-    t.string   "address"
+    t.string   "recipient_address"
     t.string   "answers",            null: false
     t.boolean  "has_mailed"
     t.datetime "created_at",         null: false
