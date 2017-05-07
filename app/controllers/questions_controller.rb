@@ -74,9 +74,9 @@ class QuestionsController < ApplicationController
     def envelope
         user_id = params[:user_id]
         user = User.find(user_id)
-        user.name = params[:recipient_name]
+        user.recipient_name = params[:recipient_name]
         user.email = params[:email]
-        user.address = params[:street_addr] + " " + params[:city_addr]
+        user.recipient_address = params[:street_addr] + " " + params[:city_addr]
         user.save
         @count = get_count
         render 'questions/final'
