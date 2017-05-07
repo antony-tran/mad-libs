@@ -43,6 +43,18 @@ class QuestionsController < ApplicationController
     end
 
     def complete
-        render 'questions/complete'
+        @count = get_count
+        respond_to do |format|
+            format.js
+            format.html { render 'questions/complete' }
+        end
+    end
+
+    def submit
+        user = User.new()
+        string_answer = "<1>" +  params["1"] + "<2>" + params["2"] + "<3>" + params["3"] + "<4>" + params["4"] + "<5>" + params["5"] + "<6>" + params["6"] + "<7>" + params["7"]
+        user.answers = string_answer
+        user.save
+        render 'questions/photo'
     end
 end

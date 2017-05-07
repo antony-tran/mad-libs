@@ -14,5 +14,5 @@ Rails.application.routes.draw do
     get 'six' => 'questions#six'
     get 'seven' => 'questions#seven'
     get 'complete' => 'questions#complete'
-
+    post 'submit' => 'questions#submit'
 end

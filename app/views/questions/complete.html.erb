@@ -1,41 +1,32 @@
 <script type="text/javascript">
-    const a_one = sessionStorage.getItem('q_one') || "Hottest Cookie in the world,"
-    const a_two = sessionStorage.getItem('q_two') || "classy by day, freaky by night"
-    const a_three = sessionStorage.getItem('q_three') || "make pancakes for me and the kids"
-    const a_four = sessionStorage.getItem('q_four') || "wash the dishes wearing nothing but your apron"
-    const a_five = sessionStorage.getItem('q_five') || "we get home from work"
-    const a_six = sessionStorage.getItem('q_six') || "do it like they do on the Discovery Channel"
-    const a_seven = sessionStorage.getItem('q_seven') || "That cookie you kind of like"
-
-    $("#recipient-name").html(a_one + ",")
-    $("#a_two").val(a_two)
-    $("#a_three").val(a_three)
-    $("#a_four").val(a_four)
-    $("#a_five").val(a_five)
-    $("#a_six").val(a_six)
-    $("#sender-name").val(a_seven)
-
+    function stopEnterkey(evt) {
+        if (evt.keyCode === 13) {
+            return false
+        }
+    }
+    document.onkeypress = stopEnterkey
 </script>
 
 <div class="complete-form-outer-container">
     <div class="complete-form-container">
-        <div class="complete-image">
-            <div>
-                Check your masterpiece!
+        <form action="/submit" method="post">
+            <div class="complete-form-text">
+                <div><input type="text" id="recipient-name" width="200px" name="1"></div>
+                <div>
+                    It's not usual that a normal cookie like me meets a <input name="2" type="text" id="a_two" style="width: 230px" maxlength="30" /> cookie like you.  Every time you <input name="3" type="text" id="a_three" style="width: 280px" maxlength="40" />, it makes me want to <input name="4" type="text" id="a_four" style="width: 370px" maxlength="50" />.  Tomorrow, when <input name="5" type="text" id="a_five" style="width: 200px" maxlength="50" />, let's <input name="6" type="text" id="a_six" style="width: 330px" maxlength="50"/>.
+                </div>
+                <div>
+                    XOXO,
+                </div>
+                <div class="last-line">
+                    <input name="7" type="text" id="sender-name" style="width: 210px" />
+                    <button class="next-button" value="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="32" viewBox="0 0 36 65">
+                            <path fill="#C00" d="M3.9 65.2L0 61.3l28.7-28.7L0 3.9 3.9 0l32.6 32.6"/>
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div>
-                
-            </div>
-        </div>
-        <div class="complete-form-text">
-            <div id="recipient-name"></div>
-            <div>
-                It's not usual that a normal cookie like me meets a <input type="text" id="a_two" /> cookie like you.  Every time you <input type="text" id="a_three" />, it makes me want to <input type="text" id="a_four" />.  Tomorrow, when <input type="text" id="a_five"/>, let's <input type="text" id="a_six" />.
-            </div>
-            <div>
-                XOXO,
-            </div>
-            <div id="sender-name"></div>
-        </div>
+        </form>
     </div>
 </div>
