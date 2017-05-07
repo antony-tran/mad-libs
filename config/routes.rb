@@ -15,4 +15,6 @@ Rails.application.routes.draw do
     get 'seven' => 'questions#seven'
     get 'complete' => 'questions#complete'
     post 'submit' => 'questions#submit'
+    post 'photo' => 'questions#photo'
+    post 'envelope' => 'questions#envelope'
 end

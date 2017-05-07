@@ -51,10 +51,34 @@ class QuestionsController < ApplicationController
     end
 
     def submit
+        @count = get_count
         user = User.new()
         string_answer = "<1>" +  params["1"] + "<2>" + params["2"] + "<3>" + params["3"] + "<4>" + params["4"] + "<5>" + params["5"] + "<6>" + params["6"] + "<7>" + params["7"]
         user.answers = string_answer
         user.save
+        @user = user
         render 'questions/photo'
+    end
+
+    def photo
+        @count = get_count
+        user_id = params[:user_id]
+        @user = User.find(user_id)
+        photo = params[:user][:photo]
+        @user.photo = photo
+        @user.save
+        @user_id = @user.id
+        render 'questions/envelope'
+    end
+
+    def envelope
+        user_id = params[:user_id]
+        user = User.find(user_id)
+        user.name = params[:recipient_name]
+        user.email = params[:email]
+        user.address = params[:street_addr] + " " + params[:city_addr]
+        user.save
+        @count = get_count
+        render 'questions/final'
     end
 end
