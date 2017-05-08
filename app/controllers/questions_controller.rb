@@ -64,9 +64,11 @@ class QuestionsController < ApplicationController
         @count = get_count
         user_id = params[:user_id]
         @user = User.find(user_id)
-        photo = params[:user][:photo]
-        @user.photo = photo
-        @user.save
+        if params[:user]
+            photo = params[:user][:photo]
+            @user.photo = photo
+            @user.save
+        end
         @user_id = @user.id
         render 'questions/envelope'
     end
