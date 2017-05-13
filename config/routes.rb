@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
     get '8n30fls92s' => 'sessions#new'
     post '8n30fls92s' => 'sessions#create'
+    get '543JHBO' => 'users#index'
     delete 'logout' => 'sessions#destroy'
 
     root 'welcome#index'

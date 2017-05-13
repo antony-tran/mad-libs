@@ -2,9 +2,11 @@ class SessionsController < ApplicationController
 
   def create
     @admin = Admin.find_by(username: params[:session][:username].downcase)
-    if @admin.password == params[:session][:password]
-        session[:id] = @admin.id
-        redirect_to "/"
+    if !@admin
+      redirect_to '/'
+    elsif @admin.password == params[:session][:password]
+      session[:id] = @admin.id
+      redirect_to "/543JHBO"
     else
       flash.now[:danger] = 'Invalid email/password combination'
       render 'new'

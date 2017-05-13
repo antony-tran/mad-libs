@@ -2,8 +2,8 @@
 <div>
   <div>
     <%= form_for(:session) do |f| %>
-        <p><%= f.text_field :username, placeholder: "susanyi" %></p>
-        <p><%= f.password_field :password, placeholder: "password" %></p>
+        <p><%= f.text_field :username, placeholder: "susanyi", required: true %></p>
+        <p><%= f.password_field :password, placeholder: "password", required: true %></p>
       <%= f.submit "Log In"%>
     <% end %>
   </div>

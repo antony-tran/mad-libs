@@ -1,17 +1,20 @@
-<table>
+<table border="1">
     <tr>
-        <th>Name</th>
+        <th>Recipient Name</th>
         <th>Email</th>
-        <th>Address</th>
+        <th>Recipient Address</th>
         <th>Has Mailed</th>
-        <th>Generate PDF</th>
+        <th>Photo URL</th>
+        <th>Answers</th>
     </tr>
-    <% @users.each do |user| %>
+    <% @valid_users.each do |user| %>
     <tr>
-        <td><%= user.name %></td>
+        <td><%= user.recipient_name %></td>
         <td><%= user.email %></td>
-        <td><%= user.address %></td>
+        <td><%= user.recipient_address %></td>
         <td><%= user.has_mailed %></td>
-        <td>Button</td>
+        <td><%= format_url(user.photo.url)%></td>
+        <td><%= format_answers(user.answers)%></td>
     </tr>
+    <% end %>
 </table>
