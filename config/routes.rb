@@ -18,4 +18,6 @@ Rails.application.routes.draw do
     post 'submit' => 'questions#submit'
     post 'photo' => 'questions#photo'
     post 'envelope' => 'questions#envelope'
+    get 'blog', to: redirect('https://antonytran.wixsite.com/website/blog')
+    get 'press', to: redirect('https://antonytran.wixsite.com/website/press')
 end

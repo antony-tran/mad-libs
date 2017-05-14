@@ -12,7 +12,12 @@
 
 .header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.invisible {
+    opacity: 0;
+    font-size: 40px;
 }
 
 .stripes {
@@ -51,4 +56,10 @@
     font-family: "Shadows Into Light";
     font-size: 24px;
     color: #FEF5E1;
+}
+
+.links {
+    font-size: 40px;
+    display: flex;
+    align-items: center;
 }
